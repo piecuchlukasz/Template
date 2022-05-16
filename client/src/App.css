@@ -1,0 +1,29 @@
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+.App {
+  text-align: center;
+}
+
+#basic-nav-dropdown {
+  padding: 0;
+}
+
+.form-label {
+  color: #1cc792;
+}
+
+.title {
+  font-size: calc(19px + 2.3vw);
+  font-weight:  950;
+}
+
+.brand {
+  font-size: calc(10px + 0.6vw);
+}
+
+.text {
+  font-size: calc(10px + 0.4vw);
+}
