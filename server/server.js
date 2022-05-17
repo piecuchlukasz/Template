@@ -29,8 +29,8 @@ const {
 // setting pool
 const pgPool = new pg.Pool({
    host : '192.168.0.11',
-   user : '*****',
-   password : '******',
+   user : '****',
+   password : '*****',
    database : 'Template'
 });
 
@@ -41,8 +41,8 @@ const db = knex({
 	client: 'pg',
 	connection: {
 		host : '192.168.0.11',
-		user : '*****',
-		password : '******',
+		user : '******',
+		password : '*****',
 		database : 'Template'
 	}
 });
@@ -125,7 +125,7 @@ app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcry
 app.get('/emailverification/:userEmail', (req, res) => { emailverification.handleEmailverification(req, res, db) })
 app.put('/forgotPassword', (req, res) => { forgotPassword.handleForgotPassword(req, res, db, bcrypt) })
 app.put('/passwordChange', (req, res) => { passwordChange.handlePasswordChange(req, res, db, bcrypt) })
-app.get('/logout', (req, res) => {
+app.post('/logout', (req, res) => {
   req.session.destroy(err => {
 		if (err) {
 			return res.status(400).json('Error')

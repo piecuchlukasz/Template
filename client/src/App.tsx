@@ -34,14 +34,13 @@ class App extends React.Component<{  }, myState> {
   onRouteChange = (route: string): void => {
     if (route === 'logout') {
       fetch('http://86.2.58.131:3003/logout', {
-        method: 'get',
+        method: 'post',
         credentials: 'include',
         headers: {'Content-Type': 'application/json'}
       })
       this.setState(initalState);
       this.onRefresh(true);
-    }
-    if (this.state.isSignedIn) {
+    } else if (this.state.isSignedIn) {
       fetch('http://86.2.58.131:3003/route', {
         method: 'post',
         credentials: 'include',
